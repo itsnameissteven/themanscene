@@ -13,6 +13,7 @@ const nextConfig = withTM({
   //   esmExternals: 'loose',
   //   outputStandalone: true,
   // },
+  output: 'standalone',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

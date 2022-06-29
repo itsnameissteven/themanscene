@@ -3,11 +3,9 @@ services:
   web:
     build: .
     ports:
-      - '3000:3000'
-    environment:
-      SQUARE_ACCESS_TOKEN: ${SQUARE_ACCESS_TOKEN}
-      SQUARE_ACCESS_TOKEN_PROD: ${SQUARE_ACCESS_TOKEN_PROD}
-      API_URL: ${API_URL}
+      - '3040:3000'
+    # environment:
+    #   API_URL: ${API_URL}
     restart: always
   # redis:
   #   image: 'node:16'
