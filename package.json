@@ -10,16 +10,16 @@
     "gc": "node .generate_component $1"
   },
   "dependencies": {
-    "next": "12.2.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.50.0",
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",
     "neat-treats": "1.2.64",
+    "next": "12.2.0",
     "next-transpile-modules": "^9.0.0",
-    "react-query": "^3.34.13"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-query": "^3.34.13",
+    "sass": "^1.50.0"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
