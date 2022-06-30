@@ -1,3 +1,3 @@
 import {getHello} from './hello'
 
-export {getHello}
+export {getHello }
