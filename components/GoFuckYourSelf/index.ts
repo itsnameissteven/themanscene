@@ -1,3 +1,3 @@
 import GoFuckYourSelf from './GoFuckYourSelf';
 
-export { GoFuckYourSelf };
+export default GoFuckYourSelf
