@@ -14,12 +14,20 @@ const Home: NextPage = () => {
       <div className={styles.welcomeContainer}>
         <div className={styles.welcomeMiddle}>
           <div className={styles.welcomeInner}>
-            <h1>Hello</h1>
+            <h1 className={styles.hello}>Hello</h1>
           </div>
         </div>
       </div>
       <RetroBorder>
-        <h1 className={styles.octogonContent}>Hello</h1>
+        <div className={styles.octogonContent}>
+          <div className={styles.headline}>
+            <h1>Hello</h1>
+            <h2>My Name Is</h2>
+          </div>
+          <div className={styles.name}>
+            <h3>Steven</h3>
+          </div>
+        </div>
       </RetroBorder>
     </div>
   );

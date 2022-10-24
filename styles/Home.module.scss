@@ -47,12 +47,41 @@
     }
   }
 
-  h1 {
+  .hello {
     padding: 20px 80px;
     text-align: center;
     background-color: $retroCream;
     font-size: 100px;
     font-weight: 900;
     font-family: 'Pump';
+  }
+}
+.octogonContent {
+  height: 250px;
+  width: 400px;
+  @include flexColumn;
+  .headline {
+    background-color: $retroBlack;
+    padding-left: 40px;
+    h1 {
+      color: $retroCream;
+      align-self: flex-start;
+      font-size: 50px;
+    }
+    h2 {
+      color: $retroCream;
+      margin-top: -16px;
+      padding: 0 0 6px 40px;
+    }
+  }
+  .name {
+    flex: 1 1 auto;
+    @include flexCenterCenter;
+    h3 {
+      font-size: 70px;
+      padding-bottom: 25px;
+      font-family: 'Pump';
+      text-align: center;
+    }
   }
 }

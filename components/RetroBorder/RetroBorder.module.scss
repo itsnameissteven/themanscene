@@ -32,6 +32,7 @@
 .octogonOuter {
   background-color: $retroDarkBrown;
   @include clip(0.8em, 12);
+  border-radius: 30px;
 }
 .octogonMiddle {
   @include clip(0.6em, 12);
