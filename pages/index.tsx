@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import { RetroBorder } from '../components';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
@@ -11,10 +11,16 @@ const Home: NextPage = () => {
         <meta name="the Man Scene" content="Home Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1>Welcome Home</h1>
-      </main>
+      <div className={styles.welcomeContainer}>
+        <div className={styles.welcomeMiddle}>
+          <div className={styles.welcomeInner}>
+            <h1>Hello</h1>
+          </div>
+        </div>
+      </div>
+      <RetroBorder>
+        <h1 className={styles.octogonContent}>Hello</h1>
+      </RetroBorder>
     </div>
   );
 };

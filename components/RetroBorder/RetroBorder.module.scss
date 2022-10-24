@@ -1,0 +1,43 @@
+@import '../../styles/';
+
+@function pow($angle) {
+  $op: #{100-$angle}#{'%'};
+  $an: #{$angle}#{'%'};
+
+  @return polygon(
+    $an 0%,
+    $op 0%,
+    100% $an,
+    100% $op,
+    $op 100%,
+    $an 100%,
+    0% $op,
+    0% $an
+  );
+}
+@mixin clip($padding, $angle: 15) {
+  padding: $padding;
+
+  clip-path: pow($angle);
+}
+
+.retroBorder {
+}
+
+.octogonContent {
+  @include clip(0, 12);
+  background-color: $retroCream;
+}
+
+.octogonOuter {
+  background-color: $retroDarkBrown;
+  @include clip(0.8em, 12);
+}
+.octogonMiddle {
+  @include clip(0.6em, 12);
+  background-color: $retroBrown;
+}
+.octogon {
+  @include clip(0.5em, 12);
+  background-color: $retroOrange;
+}
