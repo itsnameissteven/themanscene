@@ -11,13 +11,13 @@ const Home: NextPage = () => {
         <meta name="the Man Scene" content="Home Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.welcomeContainer}>
+      {/* <div className={styles.welcomeContainer}>
         <div className={styles.welcomeMiddle}>
           <div className={styles.welcomeInner}>
             <h1 className={styles.hello}>Hello</h1>
           </div>
         </div>
-      </div>
+      </div> */}
       <RetroBorder>
         <div className={styles.octogonContent}>
           <div className={styles.headline}>
