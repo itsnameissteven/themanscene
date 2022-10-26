@@ -1,4 +1,4 @@
-$mobile-width: 768px;
+$mobile-width: 500px;
 $tablet-width: 1024px;
 
 @mixin tablet {
@@ -35,6 +35,11 @@ $tablet-width: 1024px;
   flex-direction: column;
 }
 
+@mixin flexColumnCenter {
+  @include flexColumn;
+  align-items: center;
+}
+
 @mixin basicGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -49,6 +54,39 @@ $tablet-width: 1024px;
   }
 }
 
-@mixin fadeIn {
-  animation: fadeIn 200ms ease-in;
+@mixin fade($time: 200ms) {
+  animation: fadeIn $time ease-in;
+}
+
+@function poly($angle: 30, $percent: false) {
+  @if $percent {
+    $op: #{100-$angle}#{'%'};
+    $an: #{$angle}#{'%'};
+
+    @return polygon(
+      $an 0%,
+      $op 0%,
+      100% $an,
+      100% $op,
+      $op 100%,
+      $an 100%,
+      0% $op,
+      0% $an
+    );
+  }
+  $px: #{$angle}#{'px'};
+  @return polygon(
+    $px 0%,
+    calc(100% - #{$px}) 0%,
+    100% $px,
+    100% calc(100% - #{$px}),
+    calc(100% - #{$px}) 100%,
+    $px 100%,
+    0% calc(100% - #{$px}),
+    0% $px
+  );
+}
+@mixin clip($padding, $angle: 18, $percent: false) {
+  padding: $padding;
+  clip-path: poly($angle, $percent);
 }

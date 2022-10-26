@@ -1,0 +1,79 @@
+.goFuckYourSelf {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+.textContainer {
+  position: relative;
+  padding: 5px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1px;
+}
+.textContainer::after {
+  background: linear-gradient(
+    90deg,
+    #26465300 0%,
+    #26465300 32%,
+    #264653 66% 100%
+  );
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-66%);
+  z-index: 5;
+  width: 300%;
+  animation: unhideText 3s ease-in 2s forwards;
+}
+
+.text {
+  font-family: "Pump";
+  font-size: 7.5vw;
+  text-align: center;
+  color: #ced4daff;
+  font-weight: 700;
+}
+.path,
+.pathTwo,
+.pathThree {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+.pathTwo {
+  animation: dash 5s linear 0.25s forwards;
+}
+.pathThree {
+  animation: dash 5s linear 0.5s forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes unhideText {
+  from {
+    transform: translateX(-66%);
+  }
+  to {
+    transform: translateX(10%);
+  }
+}

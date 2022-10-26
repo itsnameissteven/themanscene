@@ -8,6 +8,7 @@ import {
   QueryClient,
   DehydratedState,
 } from '@tanstack/react-query';
+import { Layout } from '../components';
 
 interface IMyApp {
   dehydratedState: DehydratedState;
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps<IMyApp>) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

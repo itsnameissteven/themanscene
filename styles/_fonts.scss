@@ -100,3 +100,21 @@
   font-weight: 900;
   font-style: italic;
 }
+
+// Pump
+
+@font-face {
+  font-family: 'Pump';
+  src: url('../assets/fonts/PumpOpti-Medium.woff') format('woff'),
+    url('../assets/fonts/PumpOpti-Medium.woff2') format('woff2'),
+    url('../assets/fonts/PumpOpti-Medium.ttf') format('ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Pump';
+  src: url('../assets/fonts/PumpOpti-DemiBold.woff') format('woff'),
+    url('../assets/fonts/PumpOpti-DemiBold.woff2') format('woff2'),
+    url('../assets/fonts/PumpOpti-DemiBold.ttf') format('ttf');
+  font-weight: 700 bold;
+}
