@@ -1,22 +1,28 @@
 @import '../../styles/';
 
 .retroBorder {
+  width: 450px;
+  height: 290px;
 }
 
 .octogonOuter {
   background-color: $retroDarkBrown;
+  height: 100%;
   @include clip(0.8em);
 }
 .octogonMiddle {
   @include clip(0.6em);
   background-color: $retroBrown;
+  height: 100%;
 }
 .octogon {
   transition-delay: 300ms;
   @include clip(0.5em);
   background-color: $retroOrange;
+  height: 100%;
 }
 .octogonContent {
   @include clip(0);
   background-color: $retroCream;
+  height: 100%;
 }

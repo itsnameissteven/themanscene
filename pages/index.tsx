@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div> */}
-      <RetroBorder>
+      <RetroBorder className={styles.nameTag}>
         <div className={styles.octogonContent}>
           <div className={styles.headline}>
             <h1>Hello</h1>
