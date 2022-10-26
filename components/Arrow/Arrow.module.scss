@@ -1,0 +1,46 @@
+@import '../../styles/';
+
+@keyframes backgroundColorPalette {
+  to {
+    span:nth-child(2n) {
+      background: #ee6055;
+    }
+  }
+  25% {
+    span:nth-child(2n) {
+      background: #60d394;
+    }
+  }
+  50% {
+    span:nth-child(2n) {
+      background: #aaf683;
+    }
+  }
+  75% {
+    span:nth-child(2n) {
+      background: #ffd97d;
+    }
+  }
+  from {
+    span:nth-child(2n) {
+      background: #ff9b85;
+    }
+  }
+}
+
+.arrow {
+  @include flexStandard;
+  height: 75px;
+  width: 300px;
+  border: 2px solid red;
+  span:nth-child(2n) {
+    animation: backgroundColorPalette 5s steps(1) infinite;
+  }
+  span {
+    flex: 1 1 auto;
+    display: block;
+    border: 2px solid red;
+    height: 100%;
+    width: 30px;
+  }
+}
