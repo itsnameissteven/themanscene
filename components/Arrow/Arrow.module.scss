@@ -1,30 +1,23 @@
 @import '../../styles/';
 
 @keyframes backgroundColorPalette {
-  to {
-    span:nth-child(2n) {
-      background: #ee6055;
-    }
+  0% {
+    fill: $star-command-blue;
   }
-  25% {
-    span:nth-child(2n) {
-      background: #60d394;
-    }
+  20% {
+    fill: $blue-green;
   }
-  50% {
-    span:nth-child(2n) {
-      background: #aaf683;
-    }
+  40% {
+    fill: $pacific-blue;
   }
-  75% {
-    span:nth-child(2n) {
-      background: #ffd97d;
-    }
+  60% {
+    fill: $sky-blue-crayola;
   }
-  from {
-    span:nth-child(2n) {
-      background: #ff9b85;
-    }
+  80% {
+    fill: $middle-blue;
+  }
+  100% {
+    fill: $blizzard-blue;
   }
 }
 
@@ -32,15 +25,40 @@
   @include flexStandard;
   height: 75px;
   width: 300px;
-  border: 2px solid red;
-  span:nth-child(2n) {
-    animation: backgroundColorPalette 5s steps(1) infinite;
+  .span:nth-child(1) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 0ms infinite forwards;
+    }
   }
-  span {
-    flex: 1 1 auto;
-    display: block;
-    border: 2px solid red;
-    height: 100%;
-    width: 30px;
+  .span:nth-child(2) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 200ms infinite forwards;
+    }
+  }
+  .span:nth-child(3) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 400ms infinite forwards;
+    }
+  }
+  .span:nth-child(4) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 600ms infinite forwards;
+    }
+  }
+  .span:nth-child(5) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 800ms infinite forwards;
+    }
+  }
+  .span:nth-child(6) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 1000ms infinite;
+    }
+    background: $star-command-blue;
+  }
+  .span {
+    &:not(:first-child) {
+      margin-left: -30px;
+    }
   }
 }

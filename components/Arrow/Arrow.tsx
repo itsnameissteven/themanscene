@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'neat-treats';
 
 // Hooks
 
@@ -28,14 +29,12 @@ const Arrow = ({ className = '' }: IArrowProps) => {
   // Return
   return (
     <div className={`${styles.arrow} ${className}`}>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <Icon className={styles.span} name="chevron-right" />
+      <Icon className={styles.span} name="chevron-right" />
+      <Icon className={styles.span} name="chevron-right" />
+      <Icon className={styles.span} name="chevron-right" />
+      <Icon className={styles.span} name="chevron-right" />
+      <Icon className={styles.span} name="chevron-right" />
     </div>
   );
 };
