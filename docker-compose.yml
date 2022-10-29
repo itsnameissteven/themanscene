@@ -3,9 +3,5 @@ services:
   web:
     build: .
     ports:
-      - '3040:3000'
-    # environment:
-    #   API_URL: ${API_URL}
+      - '3010:3000'
     restart: always
-  # redis:
-  #   image: 'node:16'
