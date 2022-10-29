@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { RetroBorder, RoundFrame } from '../components';
+import { RetroBorder, RoundFrame, Arrow } from '../components';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
@@ -25,6 +25,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </RetroBorder>
+      <Arrow />
     </main>
   );
 };
