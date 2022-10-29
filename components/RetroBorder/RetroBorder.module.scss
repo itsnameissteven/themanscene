@@ -9,20 +9,31 @@
   background-color: $retroDarkBrown;
   height: 100%;
   @include clip(0.8em);
+  @include mobile {
+    @include clip(0.5em);
+  }
 }
 .octogonMiddle {
   @include clip(0.6em);
   background-color: $retroBrown;
   height: 100%;
+  @include mobile {
+    @include clip(0.4em);
+  }
 }
 .octogon {
   transition-delay: 300ms;
   @include clip(0.5em);
   background-color: $retroOrange;
   height: 100%;
+  @include mobile {
+    @include clip(0.3em);
+  }
 }
 .octogonContent {
   @include clip(0);
+  display: flex;
   background-color: $retroCream;
   height: 100%;
+  width: 100%;
 }

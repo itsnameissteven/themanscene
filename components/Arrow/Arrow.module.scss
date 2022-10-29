@@ -54,7 +54,6 @@
     path {
       animation: backgroundColorPalette 1000ms steps(1) 1000ms infinite;
     }
-    background: $star-command-blue;
   }
   .span {
     &:not(:first-child) {

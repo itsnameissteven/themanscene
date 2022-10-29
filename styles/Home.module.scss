@@ -1,51 +1,9 @@
 @import '../styles/index.scss';
 
-@mixin border($color, $radius: 40%) {
-  border: 12px solid $color;
-  border-left: 5px solid $color;
-  border-right: 5px solid $color;
-  border-radius: 50%;
-}
-@function pow($angle) {
-  $op: #{100-$angle}#{'%'};
-  $an: #{$angle}#{'%'};
-
-  @return polygon(
-    $an 0%,
-    $op 0%,
-    100% $an,
-    100% $op,
-    $op 100%,
-    $an 100%,
-    0% $op,
-    0% $an
-  );
-}
-@mixin clip($padding, $angle: 15) {
-  padding: $padding;
-
-  clip-path: pow($angle);
-}
-
-.container {
+.main {
   @include flexColumnCenter;
-  min-width: fit-content;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
   flex: 1 1 auto;
-  .welcomeContainer {
-    margin: 50px;
-    @include border($retroDarkBrown);
-    .welcomeMiddle {
-      @include border($retroBrown, 38%);
-    }
-    .welcomeInner {
-      @include border($retroOrange, 34%);
-      padding: 0 10px;
-      @include flexCenterCenter;
-      overflow: hidden;
-    }
-  }
 
   .hello {
     padding: 20px 80px;
@@ -56,6 +14,7 @@
     font-family: 'Pump';
   }
 }
+
 .nameTag {
   margin-bottom: 50px;
   @include mobile {
@@ -65,15 +24,11 @@
 }
 
 .octogonContent {
-  width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
   @include flexColumn;
   .headline {
     background-color: $retroBlack;
-    padding-left: 40px;
-    @include mobile {
-      padding-left: 20px;
-    }
+    padding-left: 12%;
     h1 {
       color: $retroCream;
       align-self: flex-start;
