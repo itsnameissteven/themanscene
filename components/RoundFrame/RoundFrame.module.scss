@@ -1,0 +1,27 @@
+@import '../../styles/';
+@mixin border($color, $radius: 40%) {
+  border: 12px solid $color;
+  border-left: 5px solid $color;
+  border-right: 5px solid $color;
+  border-radius: 50%;
+  @include mobile {
+    border: 7px solid $color;
+    border-left: 3px solid $color;
+    border-right: 3px solid $color;
+  }
+}
+.roundFrame {
+  .welcomeContainer {
+    margin: 50px;
+    @include border($retroDarkBrown);
+    .welcomeMiddle {
+      @include border($retroBrown, 38%);
+    }
+    .welcomeInner {
+      @include border($retroOrange, 34%);
+      padding: 0 10px;
+      @include flexCenterCenter;
+      overflow: hidden;
+    }
+  }
+}

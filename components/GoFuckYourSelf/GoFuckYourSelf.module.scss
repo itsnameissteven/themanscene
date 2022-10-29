@@ -1,3 +1,5 @@
+@import '../../styles/';
+
 .goFuckYourSelf {
   position: relative;
   width: 100%;
@@ -23,12 +25,12 @@
 .textContainer::after {
   background: linear-gradient(
     90deg,
-    #26465300 0%,
-    #26465300 32%,
-    #264653 66% 100%
+    #f8ead400 0%,
+    #f8ead400 32%,
+    #f8ead4 66% 100%
   );
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   height: 100%;
@@ -40,10 +42,10 @@
 }
 
 .text {
-  font-family: "Pump";
+  font-family: 'Pump';
   font-size: 7.5vw;
   text-align: center;
-  color: #ced4daff;
+  color: $retroBlack;
   font-weight: 700;
 }
 .path,

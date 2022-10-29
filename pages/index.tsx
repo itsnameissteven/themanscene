@@ -1,23 +1,19 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { RetroBorder } from '../components';
+import { RetroBorder, RoundFrame, Arrow } from '../components';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <main className={styles.main}>
       <Head>
         <title>The Man Scene</title>
         <meta name="the Man Scene" content="Home Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <div className={styles.welcomeContainer}>
-        <div className={styles.welcomeMiddle}>
-          <div className={styles.welcomeInner}>
-            <h1 className={styles.hello}>Hello</h1>
-          </div>
-        </div>
-      </div> */}
+      <RoundFrame>
+        <h1 className={styles.hello}>Hello</h1>
+      </RoundFrame>
       <RetroBorder className={styles.nameTag}>
         <div className={styles.octogonContent}>
           <div className={styles.headline}>
@@ -29,7 +25,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </RetroBorder>
-    </div>
+      <Arrow />
+    </main>
   );
 };
 

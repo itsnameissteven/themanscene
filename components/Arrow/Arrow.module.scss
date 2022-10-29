@@ -1,0 +1,63 @@
+@import '../../styles/';
+
+@keyframes backgroundColorPalette {
+  0% {
+    fill: $star-command-blue;
+  }
+  20% {
+    fill: $blue-green;
+  }
+  40% {
+    fill: $pacific-blue;
+  }
+  60% {
+    fill: $sky-blue-crayola;
+  }
+  80% {
+    fill: $middle-blue;
+  }
+  100% {
+    fill: $blizzard-blue;
+  }
+}
+
+.arrow {
+  @include flexStandard;
+  height: 75px;
+  width: 300px;
+  .span:nth-child(1) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 0ms infinite forwards;
+    }
+  }
+  .span:nth-child(2) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 200ms infinite forwards;
+    }
+  }
+  .span:nth-child(3) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 400ms infinite forwards;
+    }
+  }
+  .span:nth-child(4) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 600ms infinite forwards;
+    }
+  }
+  .span:nth-child(5) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 800ms infinite forwards;
+    }
+  }
+  .span:nth-child(6) {
+    path {
+      animation: backgroundColorPalette 1000ms steps(1) 1000ms infinite;
+    }
+  }
+  .span {
+    &:not(:first-child) {
+      margin-left: -30px;
+    }
+  }
+}

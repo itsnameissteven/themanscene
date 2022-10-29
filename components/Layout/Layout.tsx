@@ -26,11 +26,7 @@ const Layout = ({ children }: ILayoutProps) => {
   // Display Methods
 
   // Return
-  return (
-    <div className={styles.layout}>
-      <main className={styles.main}>{children}</main>
-    </div>
-  );
+  return <div className={styles.layout}>{children}</div>;
 };
 
 export default Layout;
