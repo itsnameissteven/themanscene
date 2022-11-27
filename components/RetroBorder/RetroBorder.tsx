@@ -29,13 +29,13 @@ const RetroBorder = ({ className = '', children }: IRetroBorderProps) => {
   // Return
   return (
     <div className={`${styles.retroBorder} ${className}`}>
-      <div className={styles.octogonOuter}>
-        <div className={styles.octogonMiddle}>
-          <div className={styles.octogon}>
-            <div className={styles.octogonContent}>{children}</div>
-          </div>
-        </div>
-      </div>
+      <span className={styles.octogonOuter}>
+        <span className={styles.octogonMiddle}>
+          <span className={styles.octogon}>
+            <span className={styles.octogonContent}>{children}</span>
+          </span>
+        </span>
+      </span>
     </div>
   );
 };
