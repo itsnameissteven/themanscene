@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </RetroBorder>
-      <Arrow />
+      {/* <Arrow /> */}
     </main>
   );
 };

@@ -118,3 +118,76 @@
     url('../assets/fonts/PumpOpti-DemiBold.ttf') format('ttf');
   font-weight: 700 bold;
 }
+
+// Bonkus
+
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-Thin.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-Light.woff2') format('woff2');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-Black.woff2') format('woff2');
+  font-weight: 900;
+}
+
+// Bonkus Italic
+
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bonkus';
+  src: url('../assets/fonts/Bonkus-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
