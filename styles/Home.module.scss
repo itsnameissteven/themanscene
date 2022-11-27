@@ -33,6 +33,7 @@
   .headline {
     background-color: $retroBlack;
     padding-left: 8%;
+    // overflow: hidden;
     h1 {
       color: $retroCream;
       align-self: flex-start;
@@ -47,7 +48,7 @@
       color: $retroCream;
       margin-top: -16px;
       font-family: 'Bonkus';
-      padding: 0 0 4px 40px;
+      padding: 0 0 8px 40px;
       @include mobile {
         margin-top: -8px;
         font-size: 20px;
