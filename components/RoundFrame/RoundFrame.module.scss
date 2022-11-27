@@ -11,8 +11,11 @@
   }
 }
 .roundFrame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   .welcomeContainer {
-    margin: 50px;
+    margin-bottom: 50px;
     @include border($retroDarkBrown);
     .welcomeMiddle {
       @include border($retroBrown, 38%);

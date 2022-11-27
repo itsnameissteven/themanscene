@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <div className={styles.octogonContent}>
           <div className={styles.headline}>
             <h1>Hello</h1>
-            <h2>My Name Is</h2>
+            <h2>my name is</h2>
           </div>
           <div className={styles.name}>
             <h3>Steven</h3>
