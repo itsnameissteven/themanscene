@@ -13,8 +13,8 @@
     font-weight: 900;
     font-family: 'Bonkus';
     @include mobile {
-      font-size: 45px;
-      padding: 10px 30px 5px;
+      font-size: 35px;
+      padding: 30px 20px 25px;
     }
   }
 }
@@ -33,7 +33,6 @@
   .headline {
     background-color: $retroBlack;
     padding-left: 8%;
-    // overflow: hidden;
     h1 {
       color: $retroCream;
       align-self: flex-start;

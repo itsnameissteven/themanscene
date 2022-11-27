@@ -7,7 +7,9 @@
 
 .octogonOuter {
   background-color: $retroDarkBrown;
+  display: inline-block;
   height: 100%;
+  width: 100%;
   @include clip(0.8em);
   @include mobile {
     @include clip(0.5em);
@@ -15,24 +17,29 @@
 }
 .octogonMiddle {
   @include clip(0.6em);
+  display: inline-block;
+
   background-color: $retroBrown;
   height: 100%;
+  width: 100%;
   @include mobile {
     @include clip(0.4em);
   }
 }
 .octogon {
   transition-delay: 300ms;
+  display: inline-block;
   @include clip(0.5em);
   background-color: $retroOrange;
   height: 100%;
+  width: 100%;
   @include mobile {
     @include clip(0.3em);
   }
 }
 .octogonContent {
   @include clip(0);
-  display: flex;
+  display: inline-block;
   background-color: $retroCream;
   height: 100%;
   width: 100%;
