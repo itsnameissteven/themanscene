@@ -11,10 +11,10 @@
     background-color: $retroCream;
     font-size: 100px;
     font-weight: 900;
-    font-family: 'Pump';
+    font-family: 'Bonkus';
     @include mobile {
-      font-size: 50px;
-      padding: 10px 30px;
+      font-size: 45px;
+      padding: 10px 30px 5px;
     }
   }
 }
@@ -32,19 +32,22 @@
   @include flexColumn;
   .headline {
     background-color: $retroBlack;
-    padding-left: 12%;
+    padding-left: 8%;
     h1 {
       color: $retroCream;
       align-self: flex-start;
+      font-family: 'Bonkus';
       font-size: 50px;
       @include mobile {
+        padding-top: 4px;
         font-size: 30px;
       }
     }
     h2 {
       color: $retroCream;
       margin-top: -16px;
-      padding: 0 0 6px 40px;
+      font-family: 'Bonkus';
+      padding: 0 0 4px 40px;
       @include mobile {
         margin-top: -8px;
         font-size: 20px;
@@ -56,12 +59,13 @@
     height: 100%;
     @include flexCenterCenter;
     h3 {
-      font-size: 70px;
-      padding-bottom: 16px;
-      font-family: 'Pump';
+      font-size: 75px;
+      padding-bottom: 4px;
+      font-family: 'Bonkus';
+      font-weight: 900;
       text-align: center;
       @include mobile {
-        font-size: 45px;
+        font-size: 55px;
       }
     }
   }
