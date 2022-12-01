@@ -13,6 +13,8 @@
     font-weight: 900;
     font-family: 'Bonkus';
     letter-spacing: -1px;
+    font-feature-settings: 'ss01';
+
     @include mobile {
       font-size: 35px;
       padding: 35px 10px 30px;

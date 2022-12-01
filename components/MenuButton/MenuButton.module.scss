@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   height: fit-content;
+  position: absolute;
+  top: 8px;
+  right: 20px;
   p {
+    margin-left: 2px;
     font-size: 35px;
     font-weight: 900;
     font-style: italic;
@@ -17,37 +21,38 @@
     display: flex;
     flex-direction: column;
     width: 45px;
+    margin-bottom: 8px;
     transform: skew(-15deg, 0);
   }
   .top {
     height: 1px;
     margin-bottom: 1px;
     width: 100%;
-    background-color: $retroOrange;
+    background-color: #264947;
   }
   .t2 {
     height: 3px;
     margin-bottom: 2px;
     width: 100%;
-    background-color: $retroOrange;
+    background-color: #264947;
   }
 
   .t3 {
     height: 4px;
     margin-bottom: 2px;
     width: 100%;
-    background-color: $retroOrange;
+    background-color: #264947;
   }
   .t4 {
     height: 5px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     width: 100%;
-    background-color: $retroOrange;
+    background-color: #264947;
   }
   .t5 {
     height: 6px;
     margin-bottom: 0px;
     width: 100%;
-    background-color: $retroOrange;
+    background-color: #264947;
   }
 }
