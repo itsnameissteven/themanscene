@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { RetroBorder, RoundFrame, Arrow } from '../components';
+import { RetroBorder, RoundFrame, MenuButton } from '../components';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
     <main className={styles.main}>
+      <MenuButton />
       <Head>
         <title>The Man Scene</title>
         <meta name="the Man Scene" content="Home Page" />
