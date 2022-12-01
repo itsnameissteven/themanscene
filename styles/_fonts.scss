@@ -123,71 +123,83 @@
 
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Thin.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-Thin.otf') format('OpenType');
   font-weight: 100;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Light.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-Light.otf') format('OpenType');
   font-weight: 300;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-Regular.otf') format('OpenType');
   font-weight: 400;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Medium.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-Medium.otf') format('OpenType');
   font-weight: 500;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Bold.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-Bold.otf') format('OpenType');
   font-weight: 700;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Black.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-Black.otf') format('OpenType');
   font-weight: 900;
+  ascent-override: 100%;
 }
 
 // Bonkus Italic
 
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-ThinItalic.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-ThinItalic.otf') format('OpenType');
   font-weight: 100;
   font-style: italic;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-LightItalic.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-LightItalic.otf') format('OpenType');
   font-weight: 300;
   font-style: italic;
+  ascent-override: 100%;
 }
 
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-RegularItalic.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-RegularItalic.otf') format('OpenType');
   font-weight: 400;
   font-style: italic;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-MediumItalic.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-MediumItalic.otf') format('OpenType');
   font-weight: 500;
   font-style: italic;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-BoldItalic.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-BoldItalic.otf') format('OpenType');
   font-weight: 700;
   font-style: italic;
+  ascent-override: 100%;
 }
 @font-face {
   font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-BlackItalic.woff2') format('woff2');
+  src: url('../assets/fonts/Bonkus-BlackItalic.otf') format('OpenType');
   font-weight: 900;
   font-style: italic;
+  ascent-override: 100%;
 }

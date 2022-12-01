@@ -1,0 +1,53 @@
+@import '../../styles/';
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  p {
+    font-size: 35px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1px;
+    vertical-align: middle;
+    font-feature-settings: 'ss01';
+  }
+
+  .color {
+    display: flex;
+    flex-direction: column;
+    width: 45px;
+    transform: skew(-15deg, 0);
+  }
+  .top {
+    height: 1px;
+    margin-bottom: 1px;
+    width: 100%;
+    background-color: $retroOrange;
+  }
+  .t2 {
+    height: 3px;
+    margin-bottom: 2px;
+    width: 100%;
+    background-color: $retroOrange;
+  }
+
+  .t3 {
+    height: 4px;
+    margin-bottom: 2px;
+    width: 100%;
+    background-color: $retroOrange;
+  }
+  .t4 {
+    height: 5px;
+    margin-bottom: 1px;
+    width: 100%;
+    background-color: $retroOrange;
+  }
+  .t5 {
+    height: 6px;
+    margin-bottom: 0px;
+    width: 100%;
+    background-color: $retroOrange;
+  }
+}
