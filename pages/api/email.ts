@@ -22,7 +22,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  console.log(req.body);
   if (req.method === 'POST') {
     const msg = {
       to: process.env.EMAIL, // Change to your recipient
