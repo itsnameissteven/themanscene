@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
+import Cors from 'cors';
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -9,19 +10,43 @@ interface IGetEmail {
   message: string;
 }
 
+const cors = Cors({
+  methods: ['POST'],
+});
+
 export const getEmail = async (inputs: IGetEmail) => {
   try {
-    const { data } = await axios.post(`/api/email`, inputs);
+    const { data } = await axios.post(
+      `https://themanscene.com/api/email`,
+      inputs
+    );
     return data;
   } catch (err) {
     console.log(err);
   }
 };
 
-export default function handler(
+function runMiddleware(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  fn: Function
+) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
+  });
+}
+
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
+  await runMiddleware(req, res, cors);
   if (req.method === 'POST') {
     const msg = {
       to: process.env.EMAIL, // Change to your recipient
