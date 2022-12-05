@@ -12,6 +12,11 @@ const nextConfig = withTM({
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {},
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
 });
 
 module.exports = nextConfig;
