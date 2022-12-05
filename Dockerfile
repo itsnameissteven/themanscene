@@ -86,7 +86,12 @@ RUN yarn build
 
 # If using npm comment out above and use below instead
 # RUN npm run build
-
+ARG SENDGRID_API_KEY
+ENV SENDGRID_API_KEY $SENDGRID_API_KEY
+ARG EMAIL
+ENV EMAIL $EMAIL
+ARG VERIFIED_EMAIL
+ENV VERIFIED_EMAIL $VERIFIED_EMAIL
 # Production image, copy all the files and run next
 FROM node:16-alpine AS runner
 WORKDIR /app
@@ -94,6 +99,13 @@ WORKDIR /app
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+ARG SENDGRID_API_KEY
+ENV SENDGRID_API_KEY $SENDGRID_API_KEY
+ARG EMAIL
+ENV EMAIL $EMAIL
+ARG VERIFIED_EMAIL
+ENV VERIFIED_EMAIL $VERIFIED_EMAIL
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
