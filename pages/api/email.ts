@@ -16,10 +16,7 @@ const cors = Cors({
 
 export const getEmail = async (inputs: IGetEmail) => {
   try {
-    const { data } = await axios.post(
-      `https://themanscene.com/api/email`,
-      inputs
-    );
+    const { data } = await axios.post(`/api/email`, inputs);
     return data;
   } catch (err) {
     console.log(err);
