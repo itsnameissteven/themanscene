@@ -90,3 +90,17 @@ $tablet-width: 1024px;
   padding: $padding;
   clip-path: poly($angle, $percent);
 }
+
+@mixin set1 {
+  font-feature-settings: 'ss01';
+}
+
+@mixin set2 {
+  font-feature-settings: 'ss02';
+}
+@mixin set3 {
+  font-feature-settings: 'ss03';
+}
+@mixin set4 {
+  font-feature-settings: 'ss04';
+}

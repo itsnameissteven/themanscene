@@ -21,7 +21,7 @@
     font-style: italic;
     letter-spacing: -1px;
     vertical-align: middle;
-    font-feature-settings: 'ss01';
+    @include set1;
     @include mobile {
       font-size: 22px;
     }

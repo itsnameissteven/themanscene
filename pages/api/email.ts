@@ -33,8 +33,8 @@ export default async function handler(
     sgMail.send(msg).then(() => {
       console.log('Email sent');
     });
-    return res.status(200);
+    return res.status(200).json({ status: 'complete' });
   } else {
-    res.status(500).send({ error: 'Issue' });
+    return res.status(500).send({ error: 'Issue' });
   }
 }
