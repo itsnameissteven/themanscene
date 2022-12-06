@@ -27,7 +27,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </RetroBorder>
-      <ContactForm />
     </main>
   );
 };
