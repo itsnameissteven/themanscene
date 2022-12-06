@@ -11,6 +11,9 @@
     top: 4px;
     right: 10px;
   }
+  &:hover {
+    cursor: pointer;
+  }
   p {
     margin-left: 2px;
     font-size: 35px;
@@ -31,8 +34,6 @@
     margin-bottom: 8px;
     transform: skewX(-16deg);
     background-image: linear-gradient(to top, $retroOrange, $retroBrown);
-    background-attachment: local;
-    position: relative;
     @include mobile {
       width: 30px;
       margin-bottom: 5.5px;
