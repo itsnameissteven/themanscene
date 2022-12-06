@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { RetroBorder, RoundFrame, MenuButton } from '../components';
 import styles from '../styles/Home.module.scss';
-import ContactForm from '../components/ContactForm';
 
 const Home: NextPage = () => {
   return (
