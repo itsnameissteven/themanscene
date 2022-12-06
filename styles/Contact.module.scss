@@ -1,3 +1,26 @@
+@import '../styles/';
+
 .main {
   flex-grow: 1;
+  @include flexColumnCenter;
+  justify-content: center;
+  .container {
+    width: 500px;
+  }
+  p {
+    line-height: 1.5;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: black;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 80px;
+    font-weight: 500;
+    font-variant-ligatures: discretionary-ligatures;
+    letter-spacing: -6px;
+    font-variant-position: sub;
+    line-height: 1;
+  }
 }
