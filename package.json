@@ -20,7 +20,6 @@
     "fs": "^0.0.1-security",
     "neat-treats": "1.2.79",
     "next": "^13.0.6",
-    "next-transpile-modules": "^9.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.55.0"

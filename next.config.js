@@ -2,13 +2,14 @@
 const path = require('path');
 require('dotenv').config();
 
-const withTM = require('next-transpile-modules')(['neat-treats']);
-
-const nextConfig = withTM({
+const nextConfig = {
   env: {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
     EMAIL: process.env.EMAIL,
     VERIFIED_EMAIL: process.env.VERIFIED_EMAIL,
+  },
+  experimental: {
+    transpilePackages: ['@acme/ui', 'lodash-es'],
   },
   reactStrictMode: true,
   output: 'standalone',
@@ -21,6 +22,6 @@ const nextConfig = withTM({
 
     return config;
   },
-});
+};
 
 module.exports = nextConfig;
