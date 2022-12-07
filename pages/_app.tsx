@@ -78,6 +78,7 @@ const myFont = localFont({
       style: 'italic',
     },
   ],
+  preload: true,
 });
 
 function MyApp({ Component, pageProps }: AppProps<IMyApp>) {
