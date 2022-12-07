@@ -10,6 +10,7 @@
     "gc": "node .generate_component $1"
   },
   "dependencies": {
+    "@next/font": "^13.0.6",
     "@sendgrid/mail": "^7.7.0",
     "@tanstack/react-query": "^4.13.0",
     "@tanstack/react-query-devtools": "^4.13.0",
@@ -20,10 +21,10 @@
     "fs": "^0.0.1-security",
     "neat-treats": "1.2.79",
     "next": "^13.0.6",
-    "next-transpile-modules": "^9.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

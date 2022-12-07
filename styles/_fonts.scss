@@ -1,194 +1,199 @@
 // Poppins
 
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Thin.ttf') format('ttf');
-  font-weight: 100;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-ThinItalic.ttf') format('ttf');
-  font-weight: 100;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-ExtraLight.ttf') format('ttf');
-  font-weight: 200;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-ExtraLightItalic.ttf') format('ttf');
-  font-weight: 200;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Light.ttf') format('ttf');
-  font-weight: 300;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-LightItalic.ttf') format('ttf');
-  font-weight: 300;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Thin.ttf') format('ttf');
+//   font-weight: 100;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-ThinItalic.ttf') format('ttf');
+//   font-weight: 100;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-ExtraLight.ttf') format('ttf');
+//   font-weight: 200;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-ExtraLightItalic.ttf') format('ttf');
+//   font-weight: 200;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Light.ttf') format('ttf');
+//   font-weight: 300;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-LightItalic.ttf') format('ttf');
+//   font-weight: 300;
+//   font-style: italic;
+// }
 
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Regular.ttf') format('ttf');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Italic.ttf') format('ttf');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Medium.ttf') format('ttf');
-  font-weight: 500;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-MediumItalic.ttf') format('ttf');
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-SemiBold.ttf') format('ttf');
-  font-weight: 600;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-SemiBoldItalic.ttf') format('ttf');
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Bold.ttf') format('ttf');
-  font-weight: 700 bold;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-BoldItalic.ttf') format('ttf');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-ExtraBold.ttf') format('ttf');
-  font-weight: 800;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-ExtraBoldItalic.ttf') format('ttf');
-  font-weight: 800;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-Black.ttf') format('ttf');
-  font-weight: 900;
-}
-@font-face {
-  font-family: 'Poppin';
-  src: url('../assets/fonts/Poppins-BlackItalic.ttf') format('ttf');
-  font-weight: 900;
-  font-style: italic;
-  ascent-override: 100%;
-}
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Regular.ttf') format('ttf');
+//   font-weight: 400;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Italic.ttf') format('ttf');
+//   font-weight: 400;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Medium.ttf') format('ttf');
+//   font-weight: 500;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-MediumItalic.ttf') format('ttf');
+//   font-weight: 500;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-SemiBold.ttf') format('ttf');
+//   font-weight: 600;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-SemiBoldItalic.ttf') format('ttf');
+//   font-weight: 600;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Bold.ttf') format('ttf');
+//   font-weight: 700 bold;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-BoldItalic.ttf') format('ttf');
+//   font-weight: 700;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-ExtraBold.ttf') format('ttf');
+//   font-weight: 800;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-ExtraBoldItalic.ttf') format('ttf');
+//   font-weight: 800;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-Black.ttf') format('ttf');
+//   font-weight: 900;
+// }
+// @font-face {
+//   font-family: 'Poppin';
+//   src: url('../assets/fonts/Poppins-BlackItalic.ttf') format('ttf');
+//   font-weight: 900;
+//   font-style: italic;
+//   ascent-override: 100%;
+// }
 
 // Pump
 
-@font-face {
-  font-family: 'Pump';
-  src: url('../assets/fonts/PumpOpti-Medium.woff') format('woff'),
-    url('../assets/fonts/PumpOpti-Medium.woff2') format('woff2'),
-    url('../assets/fonts/PumpOpti-Medium.ttf') format('ttf');
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: 'Pump';
+//   src: url('../assets/fonts/PumpOpti-Medium.woff') format('woff'),
+//     url('../assets/fonts/PumpOpti-Medium.woff2') format('woff2'),
+//     url('../assets/fonts/PumpOpti-Medium.ttf') format('ttf');
+//   font-weight: 400;
+// }
 
-@font-face {
-  font-family: 'Pump';
-  src: url('../assets/fonts/PumpOpti-DemiBold.woff') format('woff'),
-    url('../assets/fonts/PumpOpti-DemiBold.woff2') format('woff2'),
-    url('../assets/fonts/PumpOpti-DemiBold.ttf') format('ttf');
-  font-weight: 700 bold;
-}
+// @font-face {
+//   font-family: 'Pump';
+//   src: url('../assets/fonts/PumpOpti-DemiBold.woff') format('woff'),
+//     url('../assets/fonts/PumpOpti-DemiBold.woff2') format('woff2'),
+//     url('../assets/fonts/PumpOpti-DemiBold.ttf') format('ttf');
+//   font-weight: 700 bold;
+// }
 
-// Bonkus
+// // Bonkus
 
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Thin.otf') format('OpenType');
-  font-weight: 100;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Light.otf') format('OpenType');
-  font-weight: 300;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Regular.otf') format('OpenType');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Medium.otf') format('OpenType');
-  font-weight: 500;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Bold.otf') format('OpenType');
-  font-weight: 700;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-Black.otf') format('OpenType');
-  font-weight: 900;
-}
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-Thin.otf') format('OpenType');
+//   font-weight: 100;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-Light.otf') format('OpenType');
+//   font-weight: 300;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-Regular.otf') format('OpenType');
+//   font-weight: 400;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-Medium.otf') format('OpenType');
+//   font-weight: 500;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-Bold.otf') format('OpenType');
+//   font-weight: 700;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-Black.otf') format('OpenType');
+//   font-weight: 900;
+// }
 
-// Bonkus Italic
+// // Bonkus Italic
 
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-ThinItalic.otf') format('OpenType');
-  font-weight: 100;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-LightItalic.otf') format('OpenType');
-  font-weight: 300;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-ThinItalic.otf') format('OpenType');
+//   font-weight: 100;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-LightItalic.otf') format('OpenType');
+//   font-weight: 300;
+//   font-style: italic;
+// }
 
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-RegularItalic.otf') format('OpenType');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-MediumItalic.otf') format('OpenType');
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-BoldItalic.otf') format('OpenType');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Bonkus';
-  src: url('../assets/fonts/Bonkus-BlackItalic.otf') format('OpenType');
-  font-weight: 900;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-RegularItalic.otf') format('OpenType');
+//   font-weight: 400;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-MediumItalic.otf') format('OpenType');
+//   font-weight: 500;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-BoldItalic.otf') format('OpenType');
+//   font-weight: 700;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../assets/fonts/Bonkus-BlackItalic.woff2') format('woff2');
+//   font-weight: 900;
+//   font-style: italic;
+// }
+
+// @font-face {
+//   font-family: 'Bonkus';
+//   src: url('../pages/BonkusVariable.ttf') format('ttf');
+// }
