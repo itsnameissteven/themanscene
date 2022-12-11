@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
-import { Input } from 'neat-treats';
 // Hooks
 
 // Components
+import { Input } from '..';
 
 // Utils
 import { useMutation } from '@tanstack/react-query';
@@ -77,7 +77,6 @@ const ContactForm = ({ className = '' }: IContactFormProps) => {
       <div className={styles.inputContainer}>
         <Input
           id="fullName"
-          // label="Full Name"
           name="fullName"
           value={fullName}
           onChange={handleChange}
