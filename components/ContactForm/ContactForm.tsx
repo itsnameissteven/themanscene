@@ -1,8 +1,8 @@
-import React, { useReducer } from 'react';
+import React, { useCallback, useReducer } from 'react';
 // Hooks
 
 // Components
-import { Input } from '..';
+import { Input, Textarea, Button } from '..';
 
 // Utils
 import { useMutation } from '@tanstack/react-query';
@@ -59,10 +59,13 @@ const ContactForm = ({ className = '' }: IContactFormProps) => {
   const { mutate } = useMutation(() => getEmail(formState.inputs));
 
   // Interaction Handlers
-  const handleChange = <T extends Handler>(e: T) => {
-    const { name, value } = e.target;
-    formReducer({ type: 'CHANGE', payload: { name, value } });
-  };
+  const handleChange = useCallback(
+    <T extends Handler>(e: T) => {
+      const { name, value } = e.target;
+      formReducer({ type: 'CHANGE', payload: { name, value } });
+    },
+    [formReducer]
+  );
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -82,21 +85,15 @@ const ContactForm = ({ className = '' }: IContactFormProps) => {
           onChange={handleChange}
           placeholder={'Full Name'}
         />
-        <Input
-          id="email"
-          label="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        />
-        <textarea
+        <Input id="email" name="email" value={email} onChange={handleChange} />
+        <Textarea
           id="message"
           name="message"
           value={message}
           onChange={handleChange}
         />
       </div>
-      <button onClick={handleSubmit}>Send</button>
+      <Button onClick={handleSubmit}>Send</Button>
     </div>
   );
 };

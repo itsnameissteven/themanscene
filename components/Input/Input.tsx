@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 // Hooks
 
@@ -10,19 +10,23 @@ import { Element } from '..';
 // Styles
 import styles from './Input.module.scss';
 
-export interface IInputProps {
-  /** Optional classname to pass to parent container */
-  className?: string;
-}
+const Input = React.forwardRef(
+  (
+    { className = '', ...props }: PolymorphicComponentProps<'input'>,
+    ref?: PolymorphicRef<'input'>
+  ) => {
+    // Return
+    return (
+      <Element
+        ref={ref}
+        {...props}
+        as="input"
+        className={`${styles.input} ${className}`}
+      />
+    );
+  }
+);
 
-const Input: PolymorphicComponent = <C extends React.ElementType = 'input'>({
-  className = '',
-  ...props
-}: PolymorphicComponentProps<C>) => {
-  // Return
-  return (
-    <Element {...props} as="input" className={`${styles.input} ${className}`} />
-  );
-};
+Input.displayName = 'Input';
 
 export default React.memo(Input);

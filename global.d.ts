@@ -22,3 +22,6 @@ type PolymorphicComponentProps<
 type PolymorphicComponent = <C extends React.ElementType = 'span'>(
   props: PolymorphicComponentProps<C>
 ) => React.ReactElement | null;
+
+type PolymorphicRef<C extends React.ElementType = 'span'> =
+  React.ComponentPropsWithRef<C>['ref'];

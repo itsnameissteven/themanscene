@@ -1,4 +1,5 @@
 import Arrow from './Arrow';
+import Button from './Button';
 import ContactForm from './ContactForm';
 import Element from './Element';
 import GoFuckYourSelf from './GoFuckYourSelf';
@@ -7,10 +8,11 @@ import Layout from './Layout';
 import MenuButton from './MenuButton';
 import RetroBorder from './RetroBorder';
 import RoundFrame from './RoundFrame';
-import TextArea from './TextArea';
+import Textarea from './Textarea';
 
 export {
  Arrow,
+ Button,
  ContactForm,
  Element,
  GoFuckYourSelf,
@@ -19,5 +21,5 @@ export {
  MenuButton,
  RetroBorder,
  RoundFrame,
- TextArea,
+ Textarea,
 };

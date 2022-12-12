@@ -3,34 +3,29 @@ import React from 'react';
 // Hooks
 
 // Components
+import { Element } from '..';
 
 // Utils
 
 // Styles
-import styles from './TextArea.module.scss';
+import styles from './Textarea.module.scss';
 
 // Interfaces and Types
 
-export interface ITextAreaProps {
-  /** Optional classname to pass to parent container */
-  className?: string;
-}
-
-const TextArea = ({ className = ''}: ITextAreaProps) => {
-  // State
-
-  // Hooks
-
-  // Interaction Handlers
-
-  // Display Methods
-
-  // Return
+const Textarea = ({
+  className = '',
+  children,
+  ...props
+}: PolymorphicComponentProps<'textarea'>) => {
   return (
-    <div className={`${styles.textArea} ${className}`}>
-      Hello, I am a TextArea component.
-    </div>
-  )
+    <Element
+      as="textarea"
+      {...props}
+      className={`${styles.textArea} ${className}`}
+    >
+      {children}
+    </Element>
+  );
 };
 
-export default TextArea
+export default React.memo(Textarea);
