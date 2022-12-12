@@ -12,15 +12,15 @@ import styles from './Textarea.module.scss';
 
 // Interfaces and Types
 
-const Textarea = ({
-  className = '',
-  children,
-  ...props
-}: PolymorphicComponentProps<'textarea'>) => {
+const Textarea = (
+  { className = '', children, ...props }: GenericComponentProps<'textarea'>,
+  ref?: PolymorphicRef<'textarea'>
+) => {
   return (
     <Element
       as="textarea"
       {...props}
+      ref={ref}
       className={`${styles.textArea} ${className}`}
     >
       {children}

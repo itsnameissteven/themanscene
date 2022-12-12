@@ -14,7 +14,7 @@ import styles from './Button.module.scss';
 
 const Button = React.forwardRef(
   (
-    { className = '', children, ...props }: PolymorphicComponentProps<'button'>,
+    { className = '', children, ...props }: GenericComponentProps<'button'>,
     ref?: PolymorphicRef<'button'>
   ) => {
     // Return
