@@ -17,7 +17,6 @@ const Button = React.forwardRef(
     { className = '', children, ...props }: GenericComponentProps<'button'>,
     ref?: PolymorphicRef<'button'>
   ) => {
-    // Return
     return (
       <Element
         {...props}

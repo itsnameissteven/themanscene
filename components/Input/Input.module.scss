@@ -5,8 +5,11 @@
   margin-bottom: 1em;
   width: 100%;
   height: 40px;
-  text-indent: 10px;
+  // text-indent: 10px;
+  padding: 0 8px;
   &:focus-visible {
+    @include boxShaddow(-0.95);
+
     outline: $retroBlack inset 1px;
     outline-offset: -2px;
   }

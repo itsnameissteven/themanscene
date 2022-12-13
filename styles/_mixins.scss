@@ -104,3 +104,10 @@ $tablet-width: 1024px;
 @mixin set4 {
   font-feature-settings: 'ss04';
 }
+
+@mixin boxShaddow($opacity: -0.8) {
+  box-shadow: 0 1px 1px adjust-color($retroBlack, $alpha: $opacity),
+    0 2px 2px adjust-color($retroBlack, $alpha: $opacity),
+    0 4px 4px adjust-color($retroBlack, $alpha: $opacity),
+    0 8px 8px adjust-color($retroBlack, $alpha: $opacity);
+}

@@ -78,6 +78,7 @@ const myFont = localFont({
       style: 'italic',
     },
   ],
+  // declarations: [{ prop: 'ascent-override', value: '100%' }],
   preload: true,
 });
 

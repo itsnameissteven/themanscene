@@ -1,9 +1,12 @@
 @import '../../styles/';
 
 .textArea {
+  padding: 8px 8px;
   width: 100%;
   height: 150px;
+  margin-bottom: 1em;
   &:focus-visible {
+    @include boxShaddow(-0.95);
     outline: $retroBlack inset 1px;
     outline-offset: -2px;
   }
