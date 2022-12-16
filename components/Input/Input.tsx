@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 
 // Hooks
@@ -10,18 +11,25 @@ import { Element } from '..';
 // Styles
 import styles from './Input.module.scss';
 
+interface IInput extends GenericComponentProps<'input'> {
+  isError?: boolean;
+}
+
 const Input = React.forwardRef(
   (
-    { className = '', ...props }: GenericComponentProps<'input'>,
+    { className = '', isError = false, ...props }: IInput,
     ref?: PolymorphicRef<'input'>
   ) => {
+    console.log(isError);
     // Return
     return (
       <Element
         ref={ref}
         {...props}
         as="input"
-        className={`${styles.input} ${className}`}
+        className={clsx(`${styles.input} ${className}`, {
+          [styles.error]: isError,
+        })}
       />
     );
   }

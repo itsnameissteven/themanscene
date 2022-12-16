@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 // Hooks
 
@@ -11,10 +12,13 @@ import { Element } from '..';
 import styles from './Textarea.module.scss';
 
 // Interfaces and Types
+interface ITextarea extends GenericComponentProps<'input'> {
+  isError?: boolean;
+}
 
 const Textarea = React.forwardRef(
   (
-    { className = '', children, ...props }: GenericComponentProps<'textarea'>,
+    { className = '', isError = false, children, ...props }: ITextarea,
     ref?: PolymorphicRef<'textarea'>
   ) => {
     return (
@@ -22,7 +26,9 @@ const Textarea = React.forwardRef(
         as="textarea"
         {...props}
         ref={ref}
-        className={`${styles.textArea} ${className}`}
+        className={clsx(`${styles.textarea} ${className}`, {
+          [styles.error]: isError,
+        })}
       >
         {children}
       </Element>

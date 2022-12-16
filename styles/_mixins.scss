@@ -111,3 +111,22 @@ $tablet-width: 1024px;
     0 4px 4px adjust-color($retroBlack, $alpha: $opacity),
     0 8px 8px adjust-color($retroBlack, $alpha: $opacity);
 }
+
+@mixin errorBorder {
+  border: 2px solid $errorRed;
+  &:focus-visible {
+    outline: $errorRed solid 2px;
+    outline-offset: -2px;
+  }
+}
+
+@mixin inputBorder {
+  border: 2px solid lighten($retroBlack, 30%);
+  border-radius: 5px;
+  transition: box-shadow 100ms ease-out;
+  &:focus-visible {
+    @include boxShaddow(-0.95);
+    outline: $retroBlack solid 2px;
+    outline-offset: -2px;
+  }
+}
