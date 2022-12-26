@@ -2,7 +2,7 @@ import React, { useCallback, useReducer } from 'react';
 // Hooks
 
 // Components
-import { Input, Textarea, Button } from '..';
+import { Input, Textarea, Button, FormBuilder } from '..';
 
 // Utils
 import { useMutation } from '@tanstack/react-query';
@@ -209,6 +209,7 @@ const ContactForm = ({ className = '' }: IContactFormProps) => {
         })}
       </div>
       <Button onClick={handleSubmit}>Send</Button>
+      <FormBuilder />
     </div>
   );
 };

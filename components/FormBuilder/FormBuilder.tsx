@@ -1,8 +1,10 @@
 import React from 'react';
 
 // Hooks
+import { useFormBuilder } from '../../hooks';
 
 // Components
+import { Input, Textarea, Button } from '..';
 
 // Utils
 
@@ -16,8 +18,22 @@ export interface IFormBuilderProps {
   className?: string;
 }
 
-const FormBuilder = ({ className = ''}: IFormBuilderProps) => {
+const inputs = [
+  {
+    type: 'input' as const,
+    id: 'fullName',
+    value: '',
+  },
+  {
+    type: 'input' as const,
+    id: 'email',
+    value: '',
+  },
+];
+
+const FormBuilder = ({ className = '' }: IFormBuilderProps) => {
   // State
+  const { formInputs } = useFormBuilder({ data: inputs });
 
   // Hooks
 
@@ -28,9 +44,25 @@ const FormBuilder = ({ className = ''}: IFormBuilderProps) => {
   // Return
   return (
     <div className={`${styles.formBuilder} ${className}`}>
-      Hello, I am a FormBuilder component.
+      {formInputs.map((val) => {
+        const { type, id, priority, value, placeholder, handleChange } = val;
+        if (type === 'input') {
+          return (
+            <Input
+              key={`${id}-${priority}`}
+              id={id}
+              value={value}
+              onChange={handleChange()}
+              placeholder={placeholder}
+              // isError={isError && isTouched}
+              // onBlurCapture={handleTouch}
+            />
+          );
+        }
+        return null;
+      })}
     </div>
-  )
+  );
 };
 
-export default FormBuilder
+export default FormBuilder;
