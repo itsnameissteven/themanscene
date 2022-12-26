@@ -2,6 +2,7 @@ import Arrow from './Arrow';
 import Button from './Button';
 import ContactForm from './ContactForm';
 import Element from './Element';
+import FormBuilder from './FormBuilder';
 import GoFuckYourSelf from './GoFuckYourSelf';
 import Input from './Input';
 import Layout from './Layout';
@@ -15,6 +16,7 @@ export {
  Button,
  ContactForm,
  Element,
+ FormBuilder,
  GoFuckYourSelf,
  Input,
  Layout,

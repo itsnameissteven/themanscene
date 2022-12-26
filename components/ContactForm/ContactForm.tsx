@@ -163,7 +163,7 @@ const ContactForm = ({ className = '' }: IContactFormProps) => {
     formReducer({ type: 'RESET' });
   };
   // Display Methods
-  console.log(formState);
+
   // Return
   return (
     <div className={`${styles.contactForm} ${className}`}>
