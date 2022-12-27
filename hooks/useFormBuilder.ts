@@ -1,12 +1,12 @@
-import { ChangeEvent, useReducer } from 'react';
-import { objMap, sortData } from '../utils';
+import { useReducer } from 'react';
+import { objMap, sortData, isChangeEvent } from '../utils';
 
-function isChangeEvent<T>(e: unknown): e is ChangeEvent<T> {
-  return (e as ChangeEvent).type === 'change';
-}
+// function isChangeEvent<T>(e: unknown): e is ChangeEvent<T> {
+//   return (e as ChangeEvent).type === 'change';
+// }
 
-interface IBaseValue {
-  type: 'input' | 'select' | 'textarea'; // etc
+type IBaseValue = {
+  type: 'input' | 'select' | 'textarea' | 'submit'; // etc
   value: string;
   id: string;
   placeholder?: string;
@@ -16,23 +16,17 @@ interface IBaseValue {
   ruleId?: string | string[];
   ruleValue?: string[];
   conditionalValues?: 'equals' | 'is' | 'isNot' | 'includes';
+};
+
+declare global {
+  type FormInputDef<T extends {} = {}> = (IBaseValue & T)[];
 }
 
 interface IOptions<T extends IBaseValue> {
   data: T[];
 }
 
-// const handleChange = () => {
-//   return (e: unknown) => {
-//     console.log(e);
-//     return {
-//       id,
-//     };
-//   };
-// };
-
 const getInitialData = <T extends IBaseValue>(initialData: T[]) => {
-  // address return type
   const cleanedData = initialData.reduce(
     (
       acc: {
@@ -79,6 +73,27 @@ const reducer = (state: FormState, action: FormAction) => {
   return state;
 };
 
+const getNewValues = <T extends IBaseValue>(
+  formState: FormState,
+  inputs: T[]
+) => {
+  // use data map and replace with new values, remove any added valus for
+  const newValues = inputs.map((el) => {
+    const { inputs } = formState;
+
+    if (inputs?.[el.id]) {
+      const { priority, ...rest } = inputs[el.id];
+      return { ...el, ...rest };
+    }
+    return el;
+  });
+
+  return {
+    inputs: newValues,
+    isValid: formState.isValid,
+  };
+};
+
 const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
   const [formState, formReducer] = useReducer(
     reducer,
@@ -88,6 +103,7 @@ const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
   const formInputs = sortData({
     data: Object.values(formState.inputs),
     sortKey: 'priority',
+    sort: 'asc',
   }).map((el) => {
     return {
       ...el,
@@ -100,12 +116,24 @@ const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
               payload: { id: el.id, value: e.target.value },
             });
           }
+          if (el.type === 'textarea' && isChangeEvent<HTMLTextAreaElement>(e)) {
+            formReducer({
+              type: 'INPUT',
+              payload: { id: el.id, value: e.target.value },
+            });
+          }
         };
       },
     };
   });
 
+  const getValues = () => {
+    // use data map and replace with new values, remove any added valus for
+    return getNewValues(formState, options.data);
+  };
+
   return {
+    getValues,
     formInputs,
     formState,
     formReducer,

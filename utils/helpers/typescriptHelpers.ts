@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 interface IArgs<T, K extends keyof T = keyof T> {
   data: T[];
   sortKey: K;
@@ -60,4 +62,7 @@ export const objToArray = <Type, T2 = Type>(
   callback: (val: Type, key: string) => T2
 ) => {
   return Object.entries(obj).map(([key, val]) => callback(val, key));
+};
+export const isChangeEvent = <T>(e: unknown): e is ChangeEvent<T> => {
+  return (e as ChangeEvent).type === 'change';
 };

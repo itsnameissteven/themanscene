@@ -1,3 +1,10 @@
-import { getUrl, sortData, objMap, getKeyValue, objToArray } from './helpers';
+import {
+  getUrl,
+  sortData,
+  objMap,
+  getKeyValue,
+  objToArray,
+  isChangeEvent,
+} from './helpers';
 
-export { getUrl, sortData, objMap, getKeyValue, objToArray };
+export { getUrl, sortData, objMap, getKeyValue, objToArray, isChangeEvent };

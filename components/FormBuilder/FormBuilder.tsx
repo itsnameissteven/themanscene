@@ -18,16 +18,24 @@ export interface IFormBuilderProps {
   className?: string;
 }
 
-const inputs = [
+const inputs: FormInputDef = [
   {
-    type: 'input' as const,
+    type: 'input',
     id: 'fullName',
     value: '',
+    placeholder: 'Name',
   },
   {
-    type: 'input' as const,
+    type: 'input',
     id: 'email',
     value: '',
+    placeholder: 'Email',
+  },
+  {
+    type: 'textarea',
+    id: 'message',
+    value: '',
+    placeholder: 'Message',
   },
 ];
 
@@ -59,10 +67,20 @@ const FormBuilder = ({ className = '' }: IFormBuilderProps) => {
             />
           );
         }
+        if (type === 'textarea') {
+          return (
+            <Textarea
+              key={`${id}-${priority}`}
+              id={id}
+              value={value}
+              onChange={handleChange()}
+              placeholder={placeholder}
+            />
+          );
+        }
         return null;
       })}
     </div>
   );
 };
-
 export default FormBuilder;
