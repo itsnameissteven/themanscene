@@ -27,24 +27,6 @@ export const sortData = <T>({ data, sortKey, sort = 'desc' }: IArgs<T>) => {
   });
 };
 
-// export const sortNestedOjb = <T>({
-//   data,
-//   sortKey,
-//   sort = 'desc',
-// }: ISortObj<T>) => {
-//   const cleanedObj = Object.entries(data);
-//   if (sort === 'desc') {
-//     return cleanedObj.sort((a, b) => {
-//       if (typeof a[1][sortKey] === 'string' && typeof b[sortKey] === 'string') {
-//         const A = a[sortKey] as T[keyof T] | string as string;
-//         const B = b[sortKey] as T[keyof T] | string as string;
-//         return B.toLowerCase() > A.toLowerCase() ? 1 : -1;
-//       }
-//       return b[sortKey] > a[sortKey] ? 1 : -1;
-//     });
-//   }
-// };
-
 export const getKeyValue = <T, K extends keyof T>(obj: T, key: K): T[K] =>
   obj[key];
 
@@ -63,13 +45,12 @@ export const objToArray = <Type, T2 = Type>(
 ) => {
   return Object.entries(obj).map(([key, val]) => callback(val, key));
 };
+
 export const isChangeEvent = <T>(e: unknown): e is ChangeEvent<T> => {
   return (e as ChangeEvent).type === 'change';
 };
 
 export const isFocusEvent = (e: unknown): e is FocusEvent => {
-  console.log(e);
-  // @ts-ignore
   return (
     (e as FocusEvent).type === 'blur' || (e as FocusEvent).type === 'focus'
   );
