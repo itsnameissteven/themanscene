@@ -68,6 +68,7 @@ export const isChangeEvent = <T>(e: unknown): e is ChangeEvent<T> => {
 };
 
 export const isFocusEvent = (e: unknown): e is FocusEvent => {
+  console.log(e);
   // @ts-ignore
   return (
     (e as FocusEvent).type === 'blur' || (e as FocusEvent).type === 'focus'

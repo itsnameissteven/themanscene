@@ -14,6 +14,7 @@ type IBaseValue = {
 };
 interface IOptions<T extends IBaseValue> {
   data: T[];
+  onSubmit: (data: FormInputDef) => void;
 }
 
 declare global {
@@ -24,7 +25,8 @@ type FormState = ReturnType<typeof getInitialData>;
 
 type FormAction =
   | { type: 'INPUT'; payload: { id: string; value: string } }
-  | { type: 'TOUCH'; payload: string };
+  | { type: 'TOUCH'; payload: string }
+  | { type: 'RESET'; payload: FormState };
 
 type FormInputs = FormState['inputs'];
 
@@ -74,7 +76,7 @@ const getInitialData = <T extends IBaseValue>(options: IOptions<T>) => {
   );
   return {
     inputs: cleanedData,
-    get isValid() {
+    getisValid: function () {
       return !Object.values(this.inputs).some((input) => input.getIsError());
     },
   };
@@ -122,6 +124,9 @@ const reducer = (state: FormState, action: FormAction) => {
       inputs: touch({ inputs: state.inputs, key: action.payload }),
     };
   }
+  if (type === 'RESET') {
+    return action.payload;
+  }
   return state;
 };
 
@@ -154,6 +159,9 @@ const getValueById = <T extends Handler>(e: T) => {
 
 const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
   const [formState, formReducer] = useReducer(reducer, getInitialData(options));
+
+  //// Handlers
+
   const handleChange = useCallback((e: unknown) => {
     (e as any).persist?.();
     /// Input handlers
@@ -164,12 +172,20 @@ const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
       });
     }
   }, []);
+
   const handleTouch = useCallback((e: unknown) => {
     (e as any).persist?.();
     if (isFocusEvent(e)) {
       formReducer({ type: 'TOUCH', payload: e.target.id });
     }
   }, []);
+
+  const handleSubmit = useCallback(() => {
+    if (formState.getisValid()) {
+      options.onSubmit(getNewValues(formState, options.data).inputs);
+      formReducer({ type: 'RESET', payload: getInitialData(options) });
+    }
+  }, [formState, options]);
 
   const formInputs = useMemo(
     () =>
@@ -184,6 +200,7 @@ const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
   return {
     getValues: () => getNewValues(formState, options.data),
     handleChange,
+    handleSubmit,
     handleTouch,
     formInputs,
     formState,

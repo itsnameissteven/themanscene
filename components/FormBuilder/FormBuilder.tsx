@@ -16,6 +16,9 @@ import styles from './FormBuilder.module.scss';
 export interface IFormBuilderProps {
   /** Optional classname to pass to parent container */
   className?: string;
+  /** Action on Submit when form is valid */
+  onSubmit: (data: FormInputDef) => void;
+  data: FormInputDef;
 }
 
 const inputs: FormInputDef = [
@@ -42,12 +45,14 @@ const inputs: FormInputDef = [
   },
 ];
 
-const FormBuilder = ({ className = '' }: IFormBuilderProps) => {
+const FormBuilder = ({ className = '', onSubmit }: IFormBuilderProps) => {
   // State
-  const { formInputs, handleChange, handleTouch } = useFormBuilder({
-    data: inputs,
-  });
-  // const newHandleChange = useCallback(() => handleChange(), [handleChange]);
+  const { formInputs, handleChange, handleTouch, handleSubmit } =
+    useFormBuilder({
+      data: inputs,
+      onSubmit,
+    });
+
   // Hooks
 
   // Interaction Handlers
@@ -78,6 +83,7 @@ const FormBuilder = ({ className = '' }: IFormBuilderProps) => {
               key={`${id}-${priority}`}
               id={id}
               value={value}
+              isError={val.displayError()}
               onChange={handleChange}
               placeholder={placeholder}
               onBlurCapture={handleTouch}
@@ -86,6 +92,7 @@ const FormBuilder = ({ className = '' }: IFormBuilderProps) => {
         }
         return null;
       })}
+      <Button onClick={handleSubmit}>Send</Button>
     </div>
   );
 };
