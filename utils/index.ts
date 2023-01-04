@@ -6,6 +6,10 @@ import {
   objToArray,
   isChangeEvent,
   isFocusEvent,
+  getInitialData,
+  reducer,
+  getValueById,
+  getNewValues,
 } from './helpers';
 
 export {
@@ -16,4 +20,8 @@ export {
   objToArray,
   isChangeEvent,
   isFocusEvent,
+  getInitialData,
+  reducer,
+  getValueById,
+  getNewValues,
 };

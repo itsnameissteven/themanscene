@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 // Hooks
 import { useFormBuilder } from '../../hooks';
@@ -21,35 +21,11 @@ export interface IFormBuilderProps {
   data: FormInputDef;
 }
 
-const inputs: FormInputDef = [
-  {
-    type: 'input',
-    id: 'fullName',
-    value: '',
-    placeholder: 'Name',
-    required: true,
-  },
-  {
-    type: 'input',
-    id: 'email',
-    value: '',
-    placeholder: 'Email',
-    required: true,
-  },
-  {
-    type: 'textarea',
-    id: 'message',
-    value: '',
-    placeholder: 'Message',
-    required: true,
-  },
-];
-
-const FormBuilder = ({ className = '', onSubmit }: IFormBuilderProps) => {
+const FormBuilder = ({ className = '', onSubmit, data }: IFormBuilderProps) => {
   // State
   const { formInputs, handleChange, handleTouch, handleSubmit } =
     useFormBuilder({
-      data: inputs,
+      data,
       onSubmit,
     });
 

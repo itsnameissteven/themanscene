@@ -74,3 +74,10 @@ export const isFocusEvent = (e: unknown): e is FocusEvent => {
     (e as FocusEvent).type === 'blur' || (e as FocusEvent).type === 'focus'
   );
 };
+
+export const getValueById = <T extends Handler>(e: T) => {
+  return {
+    id: e.target.id,
+    value: e.target.value,
+  };
+};
