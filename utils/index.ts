@@ -5,6 +5,15 @@ import {
   getKeyValue,
   objToArray,
   isChangeEvent,
+  isFocusEvent,
 } from './helpers';
 
-export { getUrl, sortData, objMap, getKeyValue, objToArray, isChangeEvent };
+export {
+  getUrl,
+  sortData,
+  objMap,
+  getKeyValue,
+  objToArray,
+  isChangeEvent,
+  isFocusEvent,
+};

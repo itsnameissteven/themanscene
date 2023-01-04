@@ -1,9 +1,7 @@
-import { useReducer } from 'react';
-import { objMap, sortData, isChangeEvent } from '../utils';
+import { useReducer, useMemo, useCallback, useRef } from 'react';
+import { sortData, isChangeEvent, isFocusEvent } from '../utils';
 
-// function isChangeEvent<T>(e: unknown): e is ChangeEvent<T> {
-//   return (e as ChangeEvent).type === 'change';
-// }
+///// Types
 
 type IBaseValue = {
   type: 'input' | 'select' | 'textarea' | 'submit'; // etc
@@ -13,26 +11,47 @@ type IBaseValue = {
   errorMessage?: string;
   required?: boolean;
   label?: string;
-  ruleId?: string | string[];
-  ruleValue?: string[];
-  conditionalValues?: 'equals' | 'is' | 'isNot' | 'includes';
 };
+interface IOptions<T extends IBaseValue> {
+  data: T[];
+}
 
 declare global {
   type FormInputDef<T extends {} = {}> = (IBaseValue & T)[];
 }
 
-interface IOptions<T extends IBaseValue> {
-  data: T[];
+type FormState = ReturnType<typeof getInitialData>;
+
+type FormAction =
+  | { type: 'INPUT'; payload: { id: string; value: string } }
+  | { type: 'TOUCH'; payload: string };
+
+type FormInputs = FormState['inputs'];
+
+type CleanedInput<T extends IBaseValue> = T & {
+  priority: number;
+  getIsError: () => boolean;
+  isTouched: boolean;
+  displayError: () => boolean;
+};
+
+interface IGetNewInputsArgs {
+  inputs: FormInputs;
+  key: string;
+  value: string;
 }
 
-const getInitialData = <T extends IBaseValue>(initialData: T[]) => {
-  const cleanedData = initialData.reduce(
+type TouchArgs = Omit<IGetNewInputsArgs, 'value'>;
+
+/////////////////////////////////
+/// Format initial Data
+/////////////////////////////////
+
+const getInitialData = <T extends IBaseValue>(options: IOptions<T>) => {
+  const cleanedData = options.data.reduce(
     (
       acc: {
-        [key: string]: T & {
-          priority: number;
-        };
+        [key: string]: CleanedInput<T>;
       },
       el,
       i
@@ -41,6 +60,13 @@ const getInitialData = <T extends IBaseValue>(initialData: T[]) => {
       acc[id] = {
         ...el,
         priority: i,
+        isTouched: false,
+        getIsError: function () {
+          return !!this.required && !this.value.trim().length;
+        },
+        displayError: function () {
+          return this.getIsError() && this.isTouched;
+        },
       };
       return acc;
     },
@@ -48,26 +74,52 @@ const getInitialData = <T extends IBaseValue>(initialData: T[]) => {
   );
   return {
     inputs: cleanedData,
-    isValid: false,
+    get isValid() {
+      return !Object.values(this.inputs).some((input) => input.getIsError());
+    },
   };
 };
 
-type FormState = ReturnType<typeof getInitialData>;
-
-type FormAction = { type: 'INPUT'; payload: { id: string; value: string } };
+const getNewInputs = ({
+  inputs,
+  key,
+  value,
+}: IGetNewInputsArgs): FormInputs => {
+  return {
+    ...inputs,
+    [key]: {
+      ...inputs[key],
+      value,
+    },
+  };
+};
+const touch = ({ inputs, key }: TouchArgs): FormInputs => {
+  return {
+    ...inputs,
+    [key]: {
+      ...inputs[key],
+      isTouched: true,
+    },
+  };
+};
 
 const reducer = (state: FormState, action: FormAction) => {
   const { type } = action;
   if (type === 'INPUT') {
+    const newInputs = getNewInputs({
+      inputs: state.inputs,
+      key: action.payload.id,
+      value: action.payload.value,
+    });
     return {
       ...state,
-      inputs: {
-        ...state.inputs,
-        [action.payload.id]: {
-          ...state.inputs[action.payload.id],
-          value: action.payload.value,
-        },
-      },
+      inputs: newInputs,
+    };
+  }
+  if (type === 'TOUCH') {
+    return {
+      ...state,
+      inputs: touch({ inputs: state.inputs, key: action.payload }),
     };
   }
   return state;
@@ -82,7 +134,7 @@ const getNewValues = <T extends IBaseValue>(
     const { inputs } = formState;
 
     if (inputs?.[el.id]) {
-      const { priority, ...rest } = inputs[el.id];
+      const { priority, getIsError, ...rest } = inputs[el.id];
       return { ...el, ...rest };
     }
     return el;
@@ -90,50 +142,49 @@ const getNewValues = <T extends IBaseValue>(
 
   return {
     inputs: newValues,
-    isValid: formState.isValid,
+  };
+};
+
+const getValueById = <T extends Handler>(e: T) => {
+  return {
+    id: e.target.id,
+    value: e.target.value,
   };
 };
 
 const useFormBuilder = <T extends IBaseValue>(options: IOptions<T>) => {
-  const [formState, formReducer] = useReducer(
-    reducer,
-    getInitialData(options.data)
+  const [formState, formReducer] = useReducer(reducer, getInitialData(options));
+  const handleChange = useCallback((e: unknown) => {
+    (e as any).persist?.();
+    /// Input handlers
+    if (isChangeEvent<HTMLInputElement | HTMLTextAreaElement>(e)) {
+      formReducer({
+        type: 'INPUT',
+        payload: getValueById(e),
+      });
+    }
+  }, []);
+  const handleTouch = useCallback((e: unknown) => {
+    (e as any).persist?.();
+    if (isFocusEvent(e)) {
+      formReducer({ type: 'TOUCH', payload: e.target.id });
+    }
+  }, []);
+
+  const formInputs = useMemo(
+    () =>
+      sortData({
+        data: Object.values(formState.inputs),
+        sortKey: 'priority',
+        sort: 'asc',
+      }),
+    [formState.inputs]
   );
 
-  const formInputs = sortData({
-    data: Object.values(formState.inputs),
-    sortKey: 'priority',
-    sort: 'asc',
-  }).map((el) => {
-    return {
-      ...el,
-      handleChange: () => {
-        return (e: unknown) => {
-          (e as any).persist?.();
-          if (el.type === 'input' && isChangeEvent<HTMLInputElement>(e)) {
-            formReducer({
-              type: 'INPUT',
-              payload: { id: el.id, value: e.target.value },
-            });
-          }
-          if (el.type === 'textarea' && isChangeEvent<HTMLTextAreaElement>(e)) {
-            formReducer({
-              type: 'INPUT',
-              payload: { id: el.id, value: e.target.value },
-            });
-          }
-        };
-      },
-    };
-  });
-
-  const getValues = () => {
-    // use data map and replace with new values, remove any added valus for
-    return getNewValues(formState, options.data);
-  };
-
   return {
-    getValues,
+    getValues: () => getNewValues(formState, options.data),
+    handleChange,
+    handleTouch,
     formInputs,
     formState,
     formReducer,

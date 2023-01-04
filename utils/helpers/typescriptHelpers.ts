@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FocusEvent } from 'react';
 
 interface IArgs<T, K extends keyof T = keyof T> {
   data: T[];
@@ -65,4 +65,11 @@ export const objToArray = <Type, T2 = Type>(
 };
 export const isChangeEvent = <T>(e: unknown): e is ChangeEvent<T> => {
   return (e as ChangeEvent).type === 'change';
+};
+
+export const isFocusEvent = (e: unknown): e is FocusEvent => {
+  // @ts-ignore
+  return (
+    (e as FocusEvent).type === 'blur' || (e as FocusEvent).type === 'focus'
+  );
 };
