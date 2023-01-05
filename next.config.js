@@ -8,9 +8,8 @@ const nextConfig = {
     EMAIL: process.env.EMAIL,
     VERIFIED_EMAIL: process.env.VERIFIED_EMAIL,
   },
-  experimental: {
-    transpilePackages: ['@acme/ui', 'lodash-es'],
-  },
+  transpilePackages: ['@acme/ui', 'lodash-es'],
+  experimental: {},
   reactStrictMode: true,
   output: 'standalone',
   sassOptions: {
