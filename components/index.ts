@@ -1,6 +1,5 @@
 import Arrow from './Arrow';
 import Button from './Button';
-import ContactForm from './ContactForm';
 import Element from './Element';
 import FormBuilder from './FormBuilder';
 import GoFuckYourSelf from './GoFuckYourSelf';
@@ -12,16 +11,15 @@ import RoundFrame from './RoundFrame';
 import Textarea from './Textarea';
 
 export {
- Arrow,
- Button,
- ContactForm,
- Element,
- FormBuilder,
- GoFuckYourSelf,
- Input,
- Layout,
- MenuButton,
- RetroBorder,
- RoundFrame,
- Textarea,
+  Arrow,
+  Button,
+  Element,
+  FormBuilder,
+  GoFuckYourSelf,
+  Input,
+  Layout,
+  MenuButton,
+  RetroBorder,
+  RoundFrame,
+  Textarea,
 };

@@ -8,15 +8,20 @@
   background-image: linear-gradient(
     to left bottom,
     $retroBlack,
-    darken($retroDarkBrown, 20%)
+    darken($retroOrange, 35%)
   );
   padding: 10px 30px;
   border-radius: 3px;
   letter-spacing: 1px;
-  @include boxShaddow;
+  transition: all 300ms ease-out;
 
   &:focus-visible {
     outline: $retroOrange solid 3px;
     outline-offset: 1px;
+  }
+  &:hover {
+    transition: all 250ms ease-in;
+    transform: translateY(-1px);
+    @include boxShaddow(-0.9);
   }
 }
