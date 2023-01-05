@@ -3,15 +3,14 @@
 .button {
   @include set3;
   color: $retroCream;
-  font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   background-image: linear-gradient(
     to left bottom,
-    $retroBlack,
-    darken($retroOrange, 35%)
+    lighten($retroBlack, 10%),
+    darken($retroDarkBrown, 15%)
   );
   padding: 10px 30px;
-  border-radius: 3px;
+  border-radius: 4px;
   letter-spacing: 1px;
   transition: all 300ms ease-out;
 
@@ -21,7 +20,7 @@
   }
   &:hover {
     transition: all 250ms ease-in;
-    transform: translateY(-1px);
+    transform: translateY(-0.5px);
     @include boxShaddow(-0.9);
   }
 }
