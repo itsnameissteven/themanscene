@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Contact.module.scss';
-import { FormBuilder } from '../components';
 import { useMutation } from '@tanstack/react-query';
 import { getEmail } from '../pages/api/email';
+import { FormBuilder } from 'neat-form-builder';
 
 const inputs: FormInputDef = [
   {
