@@ -30,9 +30,12 @@ export default async function handler(
       subject: `Contact form from ${req.body.fullName}`,
       text: req.body.message,
     };
-    sgMail.send(msg).then(() => {
-      console.log('Email sent');
-    });
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log('Email sent');
+      })
+      .catch((err: any) => console.log(err));
     return res.status(200).json({ status: 'complete' });
   } else {
     return res.status(500).send({ error: 'Issue' });
