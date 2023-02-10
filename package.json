@@ -20,7 +20,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "fs": "^0.0.1-security",
-    "neat-form-builder": "^0.0.22-beta",
+    "neat-form-builder": "^0.0.25-beta",
     "neat-treats": "^1.2.79",
     "next": "^13.0.6",
     "react": "^18.2.0",
