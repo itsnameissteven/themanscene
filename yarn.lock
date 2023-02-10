@@ -6787,10 +6787,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-neat-form-builder@^0.0.22-beta:
-  version "0.0.22-beta"
-  resolved "https://registry.yarnpkg.com/neat-form-builder/-/neat-form-builder-0.0.22-beta.tgz#121ca3d7d98cdc2c63d3ab9019108c146e260607"
-  integrity sha512-O/vKqX3J+Jvaqj0YCKo3QBDXmfa95Opgqtq+eY9cOei5K+gYrFwShiuu0XQpdszSfY6ILN4m2FY9B2FidMAy8A==
+neat-form-builder@^0.0.25-beta:
+  version "0.0.25-beta"
+  resolved "https://registry.yarnpkg.com/neat-form-builder/-/neat-form-builder-0.0.25-beta.tgz#9e77988eaefbb65df608dd12e85e5288ef71cd2f"
+  integrity sha512-8XZYifB0TqXCkU5Zkl7oGHlI+vl9SO0UmA8V7Ql+rQm1alVU7F6BgDqYqpuN+aVktLKjl9qCum2ZtgB41LKACA==
   dependencies:
     "@types/eslint" "^8.4.10"
     "@types/node" "^18.11.18"
