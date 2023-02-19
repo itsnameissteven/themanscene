@@ -21,7 +21,7 @@ jobs:
           node-version: 16.x
 
       - name: SSH
-        run: ssh ${{ secrets.LOCATION }}
+        run: ssh -t ${{ secrets.LOCATION }}
 
       # - name: Create Release Pull Request or Publish to npm
       #   id: changesets
