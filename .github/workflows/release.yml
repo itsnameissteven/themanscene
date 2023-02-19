@@ -15,13 +15,24 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Setup Node.js 16.x
-        uses: actions/setup-node@v2
+      - name: Deploy to Digital Ocean droplet via SSH action
+        uses: appleboy/ssh-action@v0.1.3
         with:
-          node-version: 16.x
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
+          script: |
+            # Login to registry
+            ls
+      # - name: Setup Node.js 16.x
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 16.x
 
-      - name: SSH
-        run: ssh -t ${{ secrets.LOCATION }}
+      # - name: SSH
+      #   run: ssh ${{ secrets.location }}
 
       # - name: Create Release Pull Request or Publish to npm
       #   id: changesets
