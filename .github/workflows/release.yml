@@ -22,10 +22,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
-          script: |
-            # Login to registry
-            ls
+          run: ls
       # - name: Setup Node.js 16.x
       #   uses: actions/setup-node@v2
       #   with:
