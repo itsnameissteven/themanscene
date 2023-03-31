@@ -7,45 +7,80 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+# name: remote ssh command
+# on: [push]
 jobs:
-  release:
-    name: Release
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout Repo
-      #   uses: actions/checkout@v2
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
+      - name: Checkout the repo
+        uses: actions/checkout@v2
         with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - name: Save DigitalOcean kubeconfig
-        run: doctl compute ssh ${{ secrets.DROPLET }}
+          # This will create a directory named `my-repo` and copy the repo contents to it
+          # so that you can easily upload it to your remote server
+          path: my-repo
 
-      # - name: Deploy to Digital Ocean droplet via SSH action
-      #   uses: appleboy/ssh-action@v0.1.7
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.SSHKEY }}
-      #     passphrase: ${{ secrets.PASSPHRASE }}
-      #     script: whoami
-      # - name: Setup Node.js 16.x
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 16.x
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            whoami
+            cd containers/themanscene/
+            docker-compose up --build -d
+            docker system prune --all -f
 
-      # - name: SSH
-      #   run: ssh ${{ secrets.location }}
+# name: Release
 
-      # - name: Create Release Pull Request or Publish to npm
-      #   id: changesets
-      #   uses: changesets/action@v1
-      #   with:
-      #     # This expects you to have a script called release which does a build for your packages and calls changeset publish
-      #     publish: yarn release
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+# on:
+#   push:
+#     branches:
+#       - main
 
-      # - name: Send a Slack notification if a publish happens
-      #   if: steps.changesets.outputs.published == 'true'
-      #   # You can do something when a publish happens.
-      #   run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
+# concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+# jobs:
+#   release:
+#     name: Release
+#     runs-on: ubuntu-latest
+#     steps:
+#       # - name: Checkout Repo
+#       #   uses: actions/checkout@v2
+#       # - name: Install doctl
+#       #   uses: digitalocean/action-doctl@v2
+#       #   with:
+#       #     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+#       # - name: Save DigitalOcean kubeconfig
+#       #   run: doctl compute ssh ${{ secrets.DROPLET }}
+
+#       - name: Deploy to Digital Ocean droplet via SSH action
+#         uses: appleboy/ssh-action@v0.1.7
+#         with:
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           key: ${{ secrets.SSHKEY }}
+#           passphrase: ${{ secrets.PASSPHRASE }}
+#           script: whoami
+#       # - name: Setup Node.js 16.x
+#       #   uses: actions/setup-node@v2
+#       #   with:
+#       #     node-version: 16.x
+
+#       # - name: SSH
+#       #   run: ssh ${{ secrets.location }}
+
+#       # - name: Create Release Pull Request or Publish to npm
+#       #   id: changesets
+#       #   uses: changesets/action@v1
+#       #   with:
+#       #     # This expects you to have a script called release which does a build for your packages and calls changeset publish
+#       #     publish: yarn release
+#       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+#       # - name: Send a Slack notification if a publish happens
+#       #   if: steps.changesets.outputs.published == 'true'
+#       #   # You can do something when a publish happens.
+#       #   run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
