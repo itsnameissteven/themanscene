@@ -1,5 +1,14 @@
-name: remote ssh command
-on: [push]
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+# name: remote ssh command
+# on: [push]
 jobs:
   build:
     name: Build
