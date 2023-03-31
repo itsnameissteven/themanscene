@@ -14,13 +14,12 @@ jobs:
     steps:
       # - name: Checkout Repo
       #   uses: actions/checkout@v2
-
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - name: Save DigitalOcean kubeconfig
-        run: doctl compute droplet list
+        run: doctl compute ssh ${{ secrets.DROPLET }}
 
       # - name: Deploy to Digital Ocean droplet via SSH action
       #   uses: appleboy/ssh-action@v0.1.7
