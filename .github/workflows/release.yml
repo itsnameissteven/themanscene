@@ -18,7 +18,12 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: whoami
+          script: |
+            whoami
+            cd containers/themanscene/
+            docker-compose up --build -d
+            docker system prune --all -f
+
 # name: Release
 
 # on:
