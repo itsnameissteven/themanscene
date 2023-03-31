@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <RoundFrame>
-        <h1 className={styles.hello}>COMING SOON...</h1>
+        <h1 className={styles.hello}>COMING SOON.....</h1>
       </RoundFrame>
       <RetroBorder className={styles.nameTag}>
         <div className={styles.octogonContent}>
